@@ -5,6 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.4'
 gem 'bootstrap-sass', ' ~> 3.1.1'
 gem 'sprockets', '2.11.0'
+gem 'bcrypt-ruby', '3.1.2'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
@@ -20,10 +21,10 @@ group :test do
   gem 'capybara', '2.1.0'
 
    # Uncomment this line on OS X.
-  # gem 'growl', '1.0.3'
+    gem 'terminal-notifier-guard'
 
   # Uncomment these lines on Linux.
-  gem 'libnotify', '0.8.0'
+  # gem 'libnotify', '0.8.0'
 end
 
 gem 'sass-rails', '4.0.1'
