@@ -24,7 +24,7 @@ group :test do
     gem 'terminal-notifier-guard'
 
   # Uncomment these lines on Linux.
-  # gem 'libnotify', '0.8.0'
+  gem 'libnotify', '0.8.0'
 end
 
 gem 'sass-rails', '4.0.1'
