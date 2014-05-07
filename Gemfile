@@ -20,8 +20,13 @@ group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
 
-  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
-  gem 'terminal-notifier-guard' if /darwin/ =~ RUBY_PLATFORM
+  group :darwin do
+    gem 'terminal-notifier-guard'
+  end
+
+  group :linux do
+    gem 'libnotify'
+  end
 
   gem 'factory_girl_rails', '4.2.1'
 end
