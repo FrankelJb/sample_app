@@ -19,6 +19,7 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'launchy'
 
   group :darwin do
     gem 'terminal-notifier-guard'
@@ -29,6 +30,8 @@ group :test do
   end
 
   gem 'factory_girl_rails', '4.2.1'
+  gem 'cucumber-rails', '1.4.0', :require => false
+  gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end
 
 gem 'sass-rails', '4.0.1'
