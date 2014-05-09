@@ -29,6 +29,8 @@ describe "Authentication" do
 			
 			it { should have_content('Sign in') }
 			it { should have_error_message('') }
+			it { should_not have_link('Profile') }
+			it { should_not have_link('Settings') }
 
 			describe "after visiting another page" do
 				before { click_link "Home" }
@@ -56,10 +58,34 @@ describe "Authentication" do
 					it "should render the desired page" do
 						expect(page).to have_title('Edit user')
 					end
+
+					describe "when signing in again" do
+						before do 
+							click_link "Sign out"
+							visit signin_path
+							fill_in "Email", 		with: user.email
+							fill_in "Password", with: user.password
+							click_button "Sign in"
+						end
+
+						it "should render the default (profile) page" do
+							expect(page).to have_title(user.name)
+						end
+					end
 				end
 			end
 
 			describe "in the Users controller" do
+
+				describe "when signed in" do
+					before { sign_in user, no_capybara: true }
+
+					describe "visiting the new page" do
+						before { get new_user_path }
+						specify { expect(response).to redirect_to(root_url) }
+					end
+
+				end
 
 				describe "visiting the edit page" do
 					before { visit edit_user_path(user) }
