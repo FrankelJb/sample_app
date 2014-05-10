@@ -27,6 +27,14 @@ group :test do
   gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
   gem 'terminal-notifier-guard' if /darwin/ =~ RUBY_PLATFORM
 
+  # group :darwin do
+  #   gem 'terminal-notifier-guard'
+  # end
+
+  # group :linux do
+  #   gem 'libnotify'
+  # end
+
   gem 'factory_girl_rails', '4.2.1'
   gem 'cucumber-rails', '1.4.0', :require => false
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
