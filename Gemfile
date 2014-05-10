@@ -24,13 +24,8 @@ group :test do
   gem 'capybara', '2.1.0'
   gem 'launchy'
 
-  group :darwin do
-    gem 'terminal-notifier-guard'
-  end
-
-  group :linux do
-    gem 'libnotify'
-  end
+  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
+  gem 'terminal-notifier-guard' if /darwin/ =~ RUBY_PLATFORM
 
   gem 'factory_girl_rails', '4.2.1'
   gem 'cucumber-rails', '1.4.0', :require => false
