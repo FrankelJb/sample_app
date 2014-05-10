@@ -24,12 +24,12 @@ group :test do
   gem 'capybara', '2.1.0'
   gem 'launchy'
 
-  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
-  gem 'terminal-notifier-guard' if /darwin/ =~ RUBY_PLATFORM
+  # gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
+  # gem 'terminal-notifier-guard' if /darwin/ =~ RUBY_PLATFORM
 
-  # group :darwin do
-  #   gem 'terminal-notifier-guard'
-  # end
+  group :darwin do
+    gem 'terminal-notifier-guard'
+  end
 
   # group :linux do
   #   gem 'libnotify'
