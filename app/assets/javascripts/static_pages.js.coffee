@@ -2,4 +2,5 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
-	$('#micropost_text').keyup ->	$('#remaining_characters').html $('#micropost_text').val().length
+	$('#micropost_text').keyup ->	
+		$('#remaining_characters').html $('#micropost_text').val().length
