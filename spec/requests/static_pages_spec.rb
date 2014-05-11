@@ -27,6 +27,9 @@ describe "Static Pages" do
         visit root_path
       end
 
+      it { should have_content(user.feed.count) }
+      it { should have_content('micropost'.pluralize(user.feed.count)) }
+
       it "should render the user's feed" do
         user.feed.each do |item|
           expect(page).to have_selector("li##{item.id}", text: item.content)
