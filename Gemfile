@@ -31,9 +31,9 @@ group :test do
     gem 'terminal-notifier-guard'
   end
 
-  # group :linux do
-  #   gem 'libnotify'
-  # end
+  group :linux do
+    gem 'libnotify'
+  end
 
   gem 'factory_girl_rails', '4.2.1'
   gem 'cucumber-rails', '1.4.0', :require => false
